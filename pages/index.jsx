@@ -40,21 +40,10 @@ export default function Home(props) {
         <h1 className={styles.title}>
           Welcome to Budget Bud!
         </h1>
-
         <p className={styles.description}>
         Budget Bud is a personal budgeting app that makes the daunting task of largescale budgeting easy!
-        Budget Bud provides an easy-to-use interface that allows users to log and organize budget entries. Features of the app will include the ability to log savings and expenses, display of the user’s total budget, and the ability to further organize budget by customizing subsections of budget entries
+        Budget Bud provides an easy-to-use interface that allows users to log and organize budget entries. Features of the app include the ability to log savings and expenses, display of the user’s total budget, and the ability to further organize budget by customizing subsections of budget entries
         </p>
-
-        <p className={styles.description}>
-          Current Location: <code className={styles.code}>{router.asPath}</code>
-          <br />
-          Status:{" "}
-          <code className={styles.code}>
-            {!props.isLoggedIn && " Not"} Logged In
-          </code>
-        </p>
-
         <div className={styles.grid}>
           {props.isLoggedIn ? (
             <>
@@ -84,6 +73,15 @@ export default function Home(props) {
               </Link>
             </>
           )}
+          <p className={styles.description}>
+            Log in or sign up to access your personal budget dashboard!
+          </p>
+          <h1 className={styles.title}>
+            About Budget Bud
+          </h1>
+          <p className={styles.description}>
+            Budget Bud background information.
+          </p>
         </div>
       </main>
 

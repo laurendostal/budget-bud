@@ -1,4 +1,3 @@
-// pages/dashboard.jsx
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -32,14 +31,6 @@ export default function Dashboard(props) {
         <h1 className={styles.title}>
           {props.user.username}&apos;s Budget Dashboard
         </h1>
-
-        <p className={styles.description}>
-          Current Route: <code className={styles.code}>{router.asPath}</code>
-          <br />
-          Status: <code className={styles.code}>
-            {props.isLoggedIn ? "Logged In" : "Not Logged In"}
-          </code>
-        </p>
 
         {/* Budget management component */}
         {props.isLoggedIn && (

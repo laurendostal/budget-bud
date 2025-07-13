@@ -1,4 +1,3 @@
-// components/BudgetClient.jsx
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -6,15 +5,15 @@ import { useState, useEffect } from 'react';
 export default function BudgetClient({ username }) {
   const storageKey = `budgetApp_${username}`;
 
-  const [data, setData] = useState({ budget: 0, categories: [], entries: [] });
+  const [data, setData] = useState({ budget: 0, categories: [], entries: [], goals: [] });
   const [loaded, setLoaded] = useState(false);
   const [newCat, setNewCat] = useState('');
   const [desc, setDesc] = useState('');
   const [amt, setAmt] = useState('');
   const [type, setType] = useState('expense');
   const [cat, setCat] = useState('');
+  const [goalText, setGoalText] = useState('');
 
-  // Load from localStorage
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const stored = localStorage.getItem(storageKey);
@@ -27,7 +26,6 @@ export default function BudgetClient({ username }) {
     }
   }, [storageKey]);
 
-  // Save whenever data changes
   useEffect(() => {
     if (loaded && typeof window !== 'undefined') {
       localStorage.setItem(storageKey, JSON.stringify(data));
@@ -59,6 +57,40 @@ export default function BudgetClient({ username }) {
       ...prev,
       entries: prev.entries.filter((_, idx) => idx !== i),
     }));
+
+  const addGoal = () => {
+    const g = goalText.trim();
+    if (g) {
+      setData(prev => ({
+        ...prev,
+        goals: [...(prev.goals || []), { text: g, completed: false }]
+      }));
+      setGoalText('');
+    }
+  };
+
+  const toggleGoal = i => {
+    setData(prev => {
+      const goals = [...(prev.goals || [])];
+      goals[i] = { ...goals[i], completed: !goals[i].completed };
+      return { ...prev, goals };
+    });
+  };
+
+  const deleteGoal = i => {
+    setData(prev => ({
+      ...prev,
+      goals: prev.goals.filter((_, idx) => idx !== i)
+    }));
+  };
+
+  const editGoal = (i, newText) => {
+    setData(prev => {
+      const goals = [...(prev.goals || [])];
+      goals[i].text = newText;
+      return { ...prev, goals };
+    });
+  };
 
   const balance =
     data.budget +
@@ -115,6 +147,34 @@ export default function BudgetClient({ username }) {
       </ul>
 
       <h3>Remaining Balance: ${balance.toFixed(2)}</h3>
+
+      <h3>Budget Goals</h3>
+      <input
+        type="text"
+        value={goalText}
+        onChange={e => setGoalText(e.target.value)}
+        placeholder="Enter a goal"
+      />
+      <button onClick={addGoal}>Add Goal</button>
+
+      <ul>
+        {(data.goals || []).map((goal, i) => (
+          <li key={i}>
+            <input
+              type="checkbox"
+              checked={goal.completed}
+              onChange={() => toggleGoal(i)}
+            />
+            <input
+              type="text"
+              value={goal.text}
+              onChange={e => editGoal(i, e.target.value)}
+              style={{ textDecoration: goal.completed ? 'line-through' : 'none' }}
+            />
+            <button onClick={() => deleteGoal(i)}>Delete</button>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
