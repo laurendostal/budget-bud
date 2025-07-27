@@ -1,5 +1,48 @@
-.container {
+.header {
+  width: 100%;
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
-  gap: 12px;
+  align-items: center;
+  background-color: #FEFEFA;
+  padding: 1rem 2rem;
+  box-shadow: 0 1px 4px rgba(0, 23, 85, 0.1);
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  font-size: 20px;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+}
+
+.siteName {
+  font-family: 'Alata';
+  font-weight: bold;
+  font-size: 40px;
+  color: #4E668A;
+}
+
+.navLink {
+  color: var(--text);
+  font-weight: bold;
+  background: var(--lightblue);
+  padding: 10px 15px;
+  margin-top: 0px;
+  border-radius: 25px;
+  display: inline-block;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.navLink:hover {
+  background: var(--darkblue);
+  color: var(--lightblue);
+  transform: scale(1.05);
+}
+
+.welcomeMessage {
+  color: var(--text);
+  margin-bottom: 10px;
 }

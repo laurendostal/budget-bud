@@ -22,7 +22,7 @@ export default function Dashboard(props) {
       <Head>
         <title>{props.user.username}&apos;s Dashboard</title>
         <meta name="description" content="User budget dashboard" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/budgetbudlogo.png"/>
       </Head>
 
       <Header isLoggedIn={props.isLoggedIn} username={props.user.username} />
@@ -52,16 +52,12 @@ export default function Dashboard(props) {
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
+        <p className={styles.footerLogo}>
+          Budget Bud
           <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+            <Image src="/budgetbudlogo.png" alt="Budget Bud Logo" width={25} height={28} />
           </span>
-        </a>
+        </p>
       </footer>
     </div>
   );

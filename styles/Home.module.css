@@ -1,24 +1,69 @@
-.container {
-  padding: 0 2rem;
+.hero {
+  background-image: url("/plantincoins.jpeg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  max-height: 1000px;
+  color: white;
+  padding: 80px 60px;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero .title {
+  text-shadow: 2px 2px 5px var(--darkgreen);
+  color: white;
+}
+
+.hero .description {
+  background-color: var(--darkgreen);
+  padding: 40px;
+  border-radius: 25px;
 }
 
 .main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: black;
+  font-size: 20px;
+}
+
+.callToAction {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.backgroundInfo {
+  background-color: white;
+  margin: 1rem;
+  padding: 1.5rem;
+  text-align: left;
+  color: var(--text);
+  text-decoration: none;
+  border: 1px solid #6E7063;
+  border-radius: 10px;
+}
+
+.backgroundInfo .title {
+  font-size: 3rem;
+}
+
+.backgroundInfo .description {
+  text-align: left;
 }
 
 .footer {
   display: flex;
   flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
+  background-color: var(--cream);
 }
 
 .footer a {
@@ -28,21 +73,14 @@
   flex-grow: 1;
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
-
 .title {
+  font-family: 'Alata';
   margin: 0;
   line-height: 1.15;
   font-size: 4rem;
+  font-weight: bold;
+  color: var(--darkgreen);
+  padding-top: 50px;
 }
 
 .title,
@@ -54,7 +92,10 @@
   margin: 4rem 0;
   line-height: 1.5;
   font-size: 1.5rem;
+  padding: 0px 40px;
 }
+
+
 
 .code {
   background: #fafafa;
@@ -73,14 +114,15 @@
 }
 
 .card {
+  background-color: var(--cream);
   margin: 1rem;
   padding: 1.5rem;
   text-align: left;
-  color: inherit;
+  color: var(--text);
   text-decoration: none;
-  border: 1px solid #eaeaea;
+  border: 1px solid #6E7063;
   border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   max-width: 350px;
 }
 
@@ -104,8 +146,8 @@
 }
 
 .card:is(:hover, :focus, :active) {
-  color: #0070f3;
-  border-color: #0070f3;
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .card h2 {
@@ -122,6 +164,13 @@
 .logo {
   height: 1em;
   margin-left: 0.5rem;
+}
+
+.footerLogo {
+  font-family: 'Alata';
+  font-weight: bold;
+  font-size: 25px;
+  color: #4E668A;
 }
 
 @media (max-width: 600px) {
