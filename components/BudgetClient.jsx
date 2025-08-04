@@ -135,6 +135,9 @@ export default function BudgetClient({ username }) {
           onChange={e => setNewCat(e.target.value)}
           placeholder="New Category"
         />
+        <p className="styles.description">
+          Create or a select a category before logging budget entries.
+        </p>
         <button onClick={addCategory} className="addBtn">Add Category</button>
         <div class="custom-select">
         <select value={cat} onChange={e => setCat(e.target.value)}>

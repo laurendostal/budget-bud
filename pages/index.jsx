@@ -98,10 +98,14 @@ export default function Home(props) {
             <div class="center-container">
             <Image
               src="/moneygrowing.jpeg"
+              width={300}
+              height={300}
               alt="Hands holding a plant sprouting with money"
-              width={400}
-              height={200}
-              style={{ maxWidth: '100%', height: 'auto'}}
+              style={{
+                width: "100%",
+                height: "auto",
+                objectFit: "contain",
+              }}
             />
             </div>
             </div>

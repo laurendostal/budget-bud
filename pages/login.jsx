@@ -92,15 +92,6 @@ export default function Login(props) {
           <p>Sign up instead?</p>
         </Link>
       </main>
-
-      <footer className={styles.footer}>
-        <p className={styles.footerLogo}>
-          Budget Bud
-          <span className={styles.logo}>
-            <Image src="/budgetbudlogo.png" alt="Budget Bud Logo" width={25} height={28} />
-          </span>
-        </p>
-      </footer>
     </div>
   );
 }

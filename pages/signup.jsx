@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import styles from "../styles/Home.module.css";
 import { useRouter } from "next/router";
+import Header from "../components/header";
 
 export default function Signup(props) {
   const router = useRouter();
@@ -59,6 +60,8 @@ export default function Signup(props) {
         <link rel="icon" href="/budgetbudlogo.png" />
       </Head>
 
+      <Header isLoggedIn={props.isLoggedIn} username={props?.user?.username} />
+
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to Budget Bud!
@@ -99,15 +102,6 @@ export default function Signup(props) {
           <p>Login instead?</p>
         </Link>
       </main>
-
-      <footer className={styles.footer}>
-        <p className={styles.footerLogo}>
-          Budget Bud
-          <span className={styles.logo}>
-            <Image src="/budgetbudlogo.png" alt="Budget Bud Logo" width={25} height={28} />
-          </span>
-        </p>
-      </footer>
     </div>
   );
 }

@@ -174,21 +174,56 @@
 }
 
 @media (max-width: 600px) {
+  .hero {
+    padding: 40px 20px;
+    max-height: none;
+  }
+  .hero .title {
+    font-size: 3rem;
+    line-height: 1.1;
+  }
+  .hero .description {
+    padding: 20px;
+    font-size: 1rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    padding-top: 30px;
+  }
+  .description {
+    font-size: 1.25rem;
+    margin: 2rem 0;
+    padding: 0 20px;
+  }
+
+  .callToAction {
+    font-size: 1.5rem;
+  }
+
   .grid {
-    width: 100%;
     flex-direction: column;
+    margin: 0 10px;
+  }
+  .card {
+    width: 100%;
+    max-width: none;
+    margin: 0.75rem 0;
+  }
+  .backgroundInfo {
+    margin: 0.75rem;
+    padding: 1rem;
+  }
+  .backgroundInfo .title {
+    font-size: 2rem;
+  }
+  
+  .form {
+    width: 95%;
+  }
+  .footer {
+    flex-direction: column;
+    padding: 1rem 0;
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .card,
-  .footer {
-    border-color: #222;
-  }
-  .code {
-    background: #111;
-  }
-  .logo img {
-    filter: invert(1);
-  }
-}
